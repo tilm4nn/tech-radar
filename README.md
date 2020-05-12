@@ -38,11 +38,23 @@ yarn build
 
 ## History
 
-Private technology radar based on
- - [Zalando's tech-radar](https://github.com/zalando/tech-radar). Thanks Zalando's team for their code. Base project was completely refactored but visualization concepts still exists :)
- - [yaneek's tech-radar](https://github.com/yaneek/tech-radar). Thanks yaneek for enhancing the original radar with
+- 2020.0.1
+   - personalization
+   - cleaned up quadrant definition
+   - cleaned up ring filtering
+   - added skill definition and filtering
+   
+Build on [yaneek's tech-radar](https://github.com/yaneek/tech-radar).
+- Thanks yaneek for enhancing the original radar with
    - extracted tens of visualization functions
    - added React library to render filters & footer
    - build based on [react-create-app](https://github.com/facebook/create-react-app)
    - deployment on Github pages with Travis
    - enabled Typescript support
+
+Build on [Zalando's tech-radar](https://github.com/zalando/tech-radar).
+- Thanks to Zalando's team for their code.
+   - Base project was completely refactored but visualization concepts still exists :)
+
+   
+
