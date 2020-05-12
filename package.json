@@ -1,9 +1,9 @@
 {
-  "name": "yankee-tech-radar",
-  "version": "2019.1.1",
+  "name": "tilm4nn-tech-radar",
+  "version": "2020.0.1",
   "description": "Visualizing technology choices",
   "homepage": "/tech-radar",
-  "repository": "https://github.com/yaneek/tech-radar.git",
+  "repository": "https://github.com/tilm4nn/tech-radar.git",
   "license": "MIT",
   "private": true,
   "directories": {
@@ -28,6 +28,7 @@
     "typescript": "^3.7.4"
   },
   "scripts": {
+    "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
