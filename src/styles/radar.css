@@ -1,5 +1,16 @@
+@media print {
+  .filter, .social-icon {
+    display: none !important;
+  }
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
 .social-icon {
   padding: 2px;
+  margin-left: 20px;
 }
 
 .entry {

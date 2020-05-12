@@ -27,15 +27,17 @@ export class FilterContainer<T> extends React.Component<IFilterContainerProps<T>
     })
     return (
       <>
-        <Typography variant="h6">{caption}:</Typography>
-        <Tag
-          tag='all'
-          onClick={() => {
-            selectTags([]);
-          }}
-          isSelected={selectedTags.length === 0}
-        />
-        {tagsComponents}
+        <div className="filter">
+          <Typography variant="h6">{caption}:</Typography>
+          <Tag
+            tag='all'
+            onClick={() => {
+              selectTags([]);
+            }}
+            isSelected={selectedTags.length === 0}
+          />
+          {tagsComponents}
+        </div>
       </>
     );
   }
