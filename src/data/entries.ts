@@ -14,6 +14,17 @@ export const ALL_ENTRIES: IEntry[] = [
     ],
   },
   {
+    ring: 'HOLD',
+    label: 'JavaScript',
+    link: 'https://en.wikipedia.org/wiki/JavaScript/',
+    quadrant: 'LANGUAGES',
+    skill: 'EXPERIENCED',
+    tags: [
+      'language',
+      'JavaScript',
+    ],
+  },
+  {
     ring: 'ADOPT',
     label: 'JEE/Jakarta EE',
     link: 'https://jakarta.ee/',
@@ -314,6 +325,17 @@ export const ALL_ENTRIES: IEntry[] = [
     tags: [
       'language',
       'kotlin',
+    ]
+  },
+  {
+    ring: 'TRIAL',
+    label: 'Scala',
+    link: 'https://www.scala-lang.org/',
+    quadrant: 'LANGUAGES',
+    skill: 'BEGINNER',
+    tags: [
+      'language',
+      'Scala',
     ]
   },
   {
@@ -1616,7 +1638,7 @@ export const ALL_ENTRIES: IEntry[] = [
     ]
   },
   {
-    ring: 'TRIAL',
+    ring: 'ASSESS',
     label: 'OpenAPI',
     link: 'https://www.openapis.org/',
     quadrant: 'PLATFORMS',
@@ -1628,7 +1650,7 @@ export const ALL_ENTRIES: IEntry[] = [
     ]
   },
   {
-    ring: 'TRIAL',
+    ring: 'ASSESS',
     label: 'RapidMQ',
     link: 'https://www.rabbitmq.com/',
     quadrant: 'PLATFORMS',
@@ -1673,7 +1695,7 @@ export const ALL_ENTRIES: IEntry[] = [
     ]
   },
   {
-    ring: 'TRIAL',
+    ring: 'ASSESS',
     label: 'Vault',
     link: 'https://www.vaultproject.io/',
     quadrant: 'PLATFORMS',
