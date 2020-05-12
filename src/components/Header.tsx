@@ -5,17 +5,17 @@ export class Header extends React.Component {
   render = () => (
     <>
       <Typography variant="h4">
-        Technology radar - Grzegorz Marchwiński
+        Technology Radar - Tilmann Kuhn
       </Typography>
 
       <Typography variant="subtitle1">
         <a className="social-icon" title="Fork me at github"
-          href="https://github.com/yaneek/tech-radar" target="_BLANK" rel="noopener noreferrer">
+          href="https://github.com/tilm4nn/tech-radar" target="_BLANK" rel="noopener noreferrer">
           <img alt="github" src="./img/GitHub-Mark-32px.png"></img>
         </a>
-        <a className="social-icon" title="Linkedin"
-          href="https://www.linkedin.com/in/grzegorz-marchwinski/" target="_BLANK" rel="noopener noreferrer" >
-          <img alt="github" src="./img/In-Black-34px-R.png"></img>
+        <a className="social-icon" title="XING"
+          href="https://www.xing.com/profile/Tilmann_Kuhn/" target="_BLANK" rel="noopener noreferrer" >
+          <img alt="XING" src="./img/XING.png" height="32px" width="32px"></img>
         </a>
       </Typography>
       {this.props.children}
