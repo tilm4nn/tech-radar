@@ -1,4 +1,6 @@
+import {QuadrantType} from "./QuadrantType";
+
 export interface IQuadrant {
   name: string,
-  tags: string[],
+  type: QuadrantType,
 }

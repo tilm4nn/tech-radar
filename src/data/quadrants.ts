@@ -2,19 +2,19 @@ import { IQuadrant } from '../types/IQuadrant';
 
 export const QUADRANTS: IQuadrant[] = [
   {
-    name: 'Languages & methodologies',
-    tags: ['q0-languages'],
+    name: 'Languages & Frameworks',
+    type: 'LANGUAGES',
   },
   {
-    name: 'Infrastructure & utilities',
-    tags: ['q1-infrastructure'],
+    name: 'Tools & Tests',
+    type: 'TOOLS',
   },
   {
-    name: 'Development tools',
-    tags: ['q2-frameworks'],
+    name: 'Techniques & Concepts',
+    type: 'TECHNIQUES',
   },
   {
-    name: 'Data Management',
-    tags: ['q3-data-management']
+    name: 'Platforms & Integration',
+    type: 'PLATFORMS',
   },
 ];

@@ -1,15 +1,20 @@
 import React from 'react';
 
-import { getAllTags, getRingFilters, getQuadrants, getQuadrantEntriesGroupedByTags, getRings } from '../lib/EntriesRepository';
+import {
+  getAllTags,
+  getQuadrants,
+  getQuadrantEntriesGroupedByTags,
+  getRings,
+  getSkills
+} from '../lib/EntriesRepository';
 import { FilterContainer } from './FilterContainer';
 import '../styles/radar.css';
 import { redrawRadar } from './tech-radar/radar';
 import { IQuadrant } from '../types/IQuadrant';
 import { Header } from './Header';
 import { IRadarEntry } from '../types/IRadarEntry';
-import { RingFilter } from '../types/RingFilter';
-import { RingType } from '../types/RingType';
 import { IRing } from '../types/IRing';
+import {ISkill} from "../types/ISkill";
 
 interface IAppProps {
   radarId: string;
@@ -18,26 +23,29 @@ interface IAppProps {
 interface IAppState {
   availableTags: string[],
   selectedTags: string[],
-  availableRingFilters: RingFilter,
-  selectedRingFilters: RingType[],
+  selectedSkills: ISkill[],
+  selectedRings: IRing[],
   quadrants: IQuadrant[],
   entries: IRadarEntry[],
   rings: IRing[],
-};
+  skills: ISkill[],
+}
 
 export class AppContainer extends React.Component<IAppProps, IAppState>{
   constructor(props: IAppProps) {
     super(props);
     const quadrants = getQuadrants();
     const rings: IRing[] = getRings();
+    const skills: ISkill[] = getSkills();
 
     this.state = {
       availableTags: getAllTags(),
       selectedTags: [],
-      availableRingFilters: getRingFilters(rings),
-      selectedRingFilters: [],
+      selectedSkills: [],
+      selectedRings: [],
       quadrants,
       rings,
+      skills,
       entries: [],
     };
   }
@@ -46,8 +54,12 @@ export class AppContainer extends React.Component<IAppProps, IAppState>{
     this.setState({ selectedTags }, this.fetchEntries);
   }
 
-  selectRings = (selectedRings: RingType[]) => {
-    this.setState({ selectedRingFilters: selectedRings }, this.fetchEntries);
+  selectSkills = (selectedSkills: ISkill[]) => {
+    this.setState({ selectedSkills: selectedSkills }, this.fetchEntries);
+  }
+
+  selectRings = (selectedRings: IRing[]) => {
+    this.setState({ selectedRings: selectedRings }, this.fetchEntries);
   }
 
   componentDidMount() {
@@ -55,9 +67,16 @@ export class AppContainer extends React.Component<IAppProps, IAppState>{
   }
 
   fetchEntries = () => {
-    const selectedRingsValues = this.state.availableRingFilters[this.state.selectedRingFilters[0]] || [];
+    const selectedRingNames = this.state.selectedRings.map(r => r.name);
+    const selectedSkillTypes = this.state.selectedSkills.map(s => s.type);
     const entries = getQuadrantEntriesGroupedByTags(
-      this.state.quadrants, this.state.rings, this.state.selectedTags, selectedRingsValues);
+      this.state.quadrants,
+      this.state.rings,
+      this.state.skills,
+      this.state.selectedTags,
+      selectedRingNames,
+      selectedSkillTypes);
+
     this.setState({ entries }, this.renderExternalRadar);
   }
 
@@ -73,6 +92,7 @@ export class AppContainer extends React.Component<IAppProps, IAppState>{
           inactive: '#eee'
         },
         rings: this.state.rings,
+        zoomed_quadrant: undefined,
       });
     }, 0);
   }
@@ -85,13 +105,22 @@ export class AppContainer extends React.Component<IAppProps, IAppState>{
           tags={this.state.availableTags.sort()}
           selectedTags={this.state.selectedTags}
           selectTags={this.selectTags}
+          labelAccessor={tag => tag}
         />
         <FilterContainer
-          caption="Filter by ring"
-          tags={Object.keys(this.state.availableRingFilters) as RingType[]}
-          selectedTags={this.state.selectedRingFilters}
-          selectTags={this.selectRings}
+          caption="Filter by skill"
+          tags={this.state.skills}
+          selectedTags={this.state.selectedSkills}
+          selectTags={this.selectSkills}
+          labelAccessor={s => s.name}
         />
+        {/*<FilterContainer*/}
+        {/*  caption="Filter by ring"*/}
+        {/*  tags={this.state.rings}*/}
+        {/*  selectedTags={this.state.selectedRings}*/}
+        {/*  selectTags={this.selectRings}*/}
+        {/*  labelAccessor={r => r.name}*/}
+        {/*/>*/}
       </Header>
       {/* <EntryList entries={this.state.entries} /> */}
     </>

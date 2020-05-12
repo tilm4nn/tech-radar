@@ -8,13 +8,14 @@ interface IFilterContainerProps<T> {
   tags: T[];
   selectedTags: T[];
   selectTags: ( tags: T[] ) => void;
+  labelAccessor: (tag: T) => string;
 }
 
 export class FilterContainer<T> extends React.Component<IFilterContainerProps<T>> {
   render() {
-    const {caption, tags, selectedTags, selectTags} = this.props;
+    const {caption, tags, selectedTags, selectTags, labelAccessor} = this.props;
     const tagsComponents = tags.map((tag) => {
-      const tagString = ((tag as unknown) as string);
+      const tagString = labelAccessor(tag);
       return <Tag
         tag={tagString}
         key={tagString}
