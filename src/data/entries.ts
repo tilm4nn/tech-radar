@@ -570,7 +570,7 @@ export const ALL_ENTRIES: IEntry[] = [
     ]
   },
   {
-    ring: 'TRIAL',
+    ring: 'ASSESS',
     label: 'OpenFeign',
     link: 'https://github.com/OpenFeign/feign',
     quadrant: 'LANGUAGES',
@@ -979,7 +979,7 @@ export const ALL_ENTRIES: IEntry[] = [
     label: 'Arquillian',
     link: 'http://arquillian.org/',
     quadrant: 'TOOLS',
-    skill: 'EXPERIENCED',
+    skill: 'WROTE-ABOUT',
     tags: [
       'test',
       'Java',
@@ -992,7 +992,7 @@ export const ALL_ENTRIES: IEntry[] = [
     label: 'Arquillian Graphene',
     link: 'http://arquillian.org/arquillian-graphene/',
     quadrant: 'TOOLS',
-    skill: 'EXPERIENCED',
+    skill: 'WROTE-ABOUT',
     tags: [
       'test',
       'Java',

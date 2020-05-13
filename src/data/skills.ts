@@ -6,6 +6,6 @@ export const SKILLS: ISkill[] = [
   { name: 'beginner', type: 'BEGINNER' },
   { name: 'experienced', type: 'EXPERIENCED' },
   { name: 'wizard', type: 'WIZARD' },
-  // { name: 'wrote about', type: 'WROTE-ABOUT' },
+  { name: 'wrote about', type: 'WROTE-ABOUT' },
   // { name: 'wrote it', type: 'WROTE-IT' },
 ];
